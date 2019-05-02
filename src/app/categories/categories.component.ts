@@ -14,6 +14,11 @@ export class CategoriesComponent implements OnInit {
   thrillerLogo = '../assets/images/Thriller logo.svg';
   sciFi = 'Sci-Fi';
   sciFiLogo = '../assets/images/Sci-Fi logo.svg';
+  slogan = 'You think you’re retro, but do you even Betamax? ' +
+            'You think you’re hipster, but do you have a postal film delivery service? ' +
+            'Join the old school beta movement... ' +
+            'so uncool, it’s cool. ' +
+            'You know what we mean.';
   constructor() { }
 
   ngOnInit() {
