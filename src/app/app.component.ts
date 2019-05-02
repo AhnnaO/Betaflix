@@ -7,4 +7,6 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'Betaflix';
+  tagLine = 'Ultimate retro movie experience';
+  betaFlixImage = '../assets/images/betamax-photo-of-logo.jpg';
 }
