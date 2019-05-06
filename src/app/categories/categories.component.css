@@ -1,5 +1,6 @@
 ul{
     list-style: none;
+    border: rgb(211, 10, 167) 1px solid;
 }
 
 li{
@@ -21,4 +22,8 @@ p{
     margin-right: 10%;
     margin-left: 5%;
     
+}
+
+.slogan{
+    border: rgb(211, 10, 167) 1px solid;
 }

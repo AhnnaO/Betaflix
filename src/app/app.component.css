@@ -1,23 +1,5 @@
-h1{
-    font-family: Orbitron;
-    font-style: normal;
-    font-weight: 500;
-    
-    font-size: 4.5rem;
-    margin-top: 5%;
-    margin-bottom: 5%;
-    background:  
-        -webkit-linear-gradient(rgb(9, 170, 205), rgb(211, 10, 167));
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-}
-
-h2{
-    font-family: Geo;
-    font-style: normal;
-    font-weight: 500;
-    font-size: 2em;
-    color: rgb(33, 228, 111);
+footer{
+    border: rgb(211, 10, 167) 1px solid;
 }
 
 .betaFlixImage{
