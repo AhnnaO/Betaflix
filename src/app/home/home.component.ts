@@ -1,12 +1,12 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+// import { HttpClient } from '@angular/common/http';
 
 @Component({
-  selector: 'app-categories',
-  templateUrl: './categories.component.html',
-  styleUrls: ['./categories.component.css']
+  selector: 'app-home',
+  templateUrl: './home.component.html',
+  styleUrls: ['./home.component.css']
 })
-export class CategoriesComponent implements OnInit {
+export class HomeComponent implements OnInit {
   comedy = 'Comedy';
   comedyLogo = '../assets/images/Comedy logo.svg';
   action = 'Action';
@@ -20,10 +20,8 @@ export class CategoriesComponent implements OnInit {
             'Join the old school beta movement... ' +
             'so uncool, it’s cool. ' +
             'You know what we mean.';
-  constructor(private route: ActivatedRoute) {
-    this.route.params.subscribe(myParams => {myParams['id'];
-    });
-   }
+  betaFlixImage = '../assets/images/betamax-photo-of-logo.jpg';
+  constructor() { }
 
   ngOnInit() {
   }

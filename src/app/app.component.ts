@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { HomeComponent } from './home/home.component';
 
 @Component({
   selector: 'app-root',
@@ -7,6 +8,5 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'Betaflix';
-  tagLine = 'Ultimate retro movie experience';
-  betaFlixImage = '../assets/images/betamax-photo-of-logo.jpg';
+
 }
