@@ -1,6 +1,9 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-
+import { RouterTestingModule } from '@angular/router/testing';
 import { HomeComponent } from './home.component';
+import { NavigationComponent } from '../navigation/navigation.component';
+import { SearchComponent } from '../search/search.component';
+import { CategoriesComponent } from '../categories/categories.component';
 
 describe('HomeComponent', () => {
   let component: HomeComponent;
@@ -8,8 +11,14 @@ describe('HomeComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ HomeComponent ]
+      declarations: [ HomeComponent,
+      NavigationComponent,
+      SearchComponent,
+      CategoriesComponent
+     ],
+      imports: [ RouterTestingModule ]
     })
+
     .compileComponents();
   }));
 

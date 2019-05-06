@@ -1,3 +1,54 @@
-<p>
-  home works!
-</p>
+<app-navigation></app-navigation>
+<app-search></app-search>
+<app-categories></app-categories>
+<br>
+
+<div class="row no-gutters">
+  
+    <ul class="col-12 text-center">
+  
+      <li>
+        <a [routerLink]="['/category', 7]" routerLinkActive="active">
+          {{ comedy }}
+          <img [src]="comedyLogo" alt="pixilated smiley face">
+        </a>
+      </li>
+  
+      <li>
+        <a [routerLink]="['/category', 5]" routerLinkActive="active">
+          {{ action }}
+          <img [src]="actionLogo" alt="pixilated sword">
+        </a>
+      </li>
+  
+      <li>
+        <a [routerLink]="['/category', 6]" routerLinkActive="active">
+          {{ thriller }}
+          <img [src]="thrillerLogo" alt="pixilated scared face">
+        </a>
+      </li>
+  
+      <li>
+        <a [routerLink]="['/category', 8]" routerLinkActive="active">
+          {{ sciFi }}
+          <img [src]="sciFiLogo" alt="pixilated spaceship">
+        </a>
+      </li>
+  
+    </ul>
+  
+  </div>
+  
+  <div class="row no-gutters">
+    
+    <p class="col-12 text-center slogan"> 
+      {{ slogan }}
+    </p>
+  
+  </div>
+
+<footer class="row no-gutters">
+  <div class="col-12 text-center">
+    <img [src]="betaFlixImage" class="betaFlixImage text-center"/>
+  </div>
+</footer>

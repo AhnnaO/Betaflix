@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-categories',
@@ -19,7 +20,10 @@ export class CategoriesComponent implements OnInit {
             'Join the old school beta movement... ' +
             'so uncool, it’s cool. ' +
             'You know what we mean.';
-  constructor() { }
+  constructor(private route: ActivatedRoute) {
+    this.route.params.subscribe(myParams => {myParams['id'];
+    });
+   }
 
   ngOnInit() {
   }

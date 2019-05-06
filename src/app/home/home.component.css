@@ -1,0 +1,38 @@
+ul{
+    list-style: none;
+    border: rgb(211, 10, 167) 1px solid;
+}
+
+li, a{
+    font-family: Geo;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 1.2em;
+    color: rgb(33, 228, 111);
+    text-decoration-line: underline;
+}
+
+p{
+    font-family: Geo;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 1.0em;
+    color: rgb(33, 228, 111);
+    margin: 0px auto;
+    padding: 5%;
+    border: rgb(211, 10, 167) 1px solid;
+    
+}
+
+.slogan{
+    border: rgb(211, 10, 167) 1px solid;
+}
+
+footer{
+    border: rgb(211, 10, 167) 1px solid;
+}
+
+.betaFlixImage{
+    width: 150px;
+    height: auto;
+}
