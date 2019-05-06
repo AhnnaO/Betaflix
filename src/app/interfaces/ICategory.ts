@@ -2,3 +2,4 @@ export interface ICategory {
     categoryId: number;
     category: object;
 }
+
