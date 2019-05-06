@@ -11,6 +11,7 @@ import { DetailsComponent } from './details/details.component';
 import { AboutComponent } from './about/about.component';
 import { HomeComponent } from './home/home.component';
 import { NotFoundComponent } from './not-found/not-found.component';
+import { AdministrationComponent } from './administration/administration.component';
 
 
 const appRoutes = [
@@ -31,7 +32,8 @@ const appRoutes = [
     DetailsComponent,
     AboutComponent,
     HomeComponent,
-    NotFoundComponent
+    NotFoundComponent,
+    AdministrationComponent
   ],
   imports: [
     BrowserModule,
