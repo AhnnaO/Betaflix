@@ -1,21 +1,43 @@
 <div class="row">
+  
   <ul class="col-12 text-center">
-    <li>{{ comedy }}
-      <img [src]="comedyLogo" alt="pixilated smiley face">
+
+    <li>
+      <a [routerLink="['/category, #]" routerLinkActive="active">
+        {{ comedy }}
+        <img [src]="comedyLogo" alt="pixilated smiley face">
+      </a>
     </li>
-    <li>{{ action }}
-      <img [src]="actionLogo" alt="pixilated sword">
+
+    <li>
+      <a [routerLink="['/category, #]" routerLinkActive="active">
+        {{ action }}
+        <img [src]="actionLogo" alt="pixilated sword">
+      </a>
     </li>
-    <li>{{ thriller }}
-      <img [src]="thrillerLogo" alt="pixilated scared face">
+
+    <li>
+      <a [routerLink="['/category, #]" routerLinkActive="active">
+        {{ thriller }}
+        <img [src]="thrillerLogo" alt="pixilated scared face">
+      </a>
     </li>
-    <li>{{ sciFi }}
-      <img [src]="sciFiLogo" alt="pixilated spaceship">
+
+    <li>
+      <a [routerLink="['/category, #]" routerLinkActive="active">
+        {{ sciFi }}
+        <img [src]="sciFiLogo" alt="pixilated spaceship">
+      </a>
     </li>
+
   </ul>
+
 </div>
+
 <div class="row">
+  
   <p class="col-12 text-center slogan"> 
     {{ slogan }}
   </p>
+
 </div>
