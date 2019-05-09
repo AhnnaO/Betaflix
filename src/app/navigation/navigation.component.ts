@@ -8,8 +8,6 @@ import { Component, OnInit } from '@angular/core';
 export class NavigationComponent implements OnInit {
   homeLogo = '../assets/images/Home logo.svg';
   shoppingCartLogo = '../assets/images/Shopping cart logo.svg';
-  title = 'Betaflix';
-  tagLine = 'Ultimate retro movie experience';
   constructor() { }
 
   ngOnInit() {

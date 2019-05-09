@@ -25,5 +25,7 @@ describe('CategoriesComponent', () => {
     expect(component).toBeTruthy();
   });
 
-  it()
+  // it('should show categories', () => {
+  //   expect(component.dataService.toBeTruthy());
+  // });
 });

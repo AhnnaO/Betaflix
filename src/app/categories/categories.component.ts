@@ -3,6 +3,8 @@ import { ActivatedRoute } from '@angular/router';
 import { DataService } from '../service/data.service';
 import { ICategory } from '../interfaces/ICategory';
 
+import { HttpClient } from '@angular/common/http';
+
 @Component({
   selector: 'app-categories',
   templateUrl: './categories.component.html',
