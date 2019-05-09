@@ -24,4 +24,6 @@ describe('CategoriesComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
+  it()
 });
