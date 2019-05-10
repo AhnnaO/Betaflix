@@ -4,6 +4,7 @@ import { HomeComponent } from './home.component';
 import { NavigationComponent } from '../navigation/navigation.component';
 import { SearchComponent } from '../search/search.component';
 import { CategoriesComponent } from '../categories/categories.component';
+import { HttpClientModule } from '@angular/common/http';
 
 describe('HomeComponent', () => {
   let component: HomeComponent;
@@ -16,7 +17,7 @@ describe('HomeComponent', () => {
       SearchComponent,
       CategoriesComponent
      ],
-      imports: [ RouterTestingModule ]
+      imports: [ RouterTestingModule, HttpClientModule ]
     })
 
     .compileComponents();

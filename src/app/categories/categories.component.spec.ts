@@ -2,6 +2,7 @@ import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { RouterTestingModule } from '@angular/router/testing';
 
 import { CategoriesComponent } from './categories.component';
+import { HttpClientModule } from '@angular/common/http';
 
 describe('CategoriesComponent', () => {
   let component: CategoriesComponent;
@@ -10,7 +11,7 @@ describe('CategoriesComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [ CategoriesComponent ],
-      imports: [ RouterTestingModule ]
+      imports: [ RouterTestingModule, HttpClientModule ]
     })
     .compileComponents();
   }));
@@ -24,4 +25,8 @@ describe('CategoriesComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
+  // it('should show categories', () => {
+  //   expect(component.dataService.toBeTruthy());
+  // });
 });

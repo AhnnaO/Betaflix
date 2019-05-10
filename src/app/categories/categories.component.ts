@@ -1,5 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { DataService } from '../service/data.service';
+import { ICategory } from '../interfaces/ICategory';
+
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-categories',
@@ -20,12 +24,19 @@ export class CategoriesComponent implements OnInit {
             'Join the old school beta movement... ' +
             'so uncool, it’s cool. ' +
             'You know what we mean.';
-  constructor(private route: ActivatedRoute) {
-    this.route.params.subscribe(myParams => {myParams['id'];
-    });
-   }
+  // constructor(private route: ActivatedRoute) {
+  //   this.route.params.subscribe(myParams => {myParams['id'];
+  //   });
+  //  }
+
+   constructor(private dataService: DataService) {}
+
+   categories: ICategory[];
 
   ngOnInit() {
+    this.dataService.getCategory().subscribe((choice) => {
+      this.categories = choice;
+    });
   }
 
 }
