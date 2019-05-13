@@ -42,5 +42,5 @@ export class CategoriesComponent implements OnInit {
     // this.router.navigateByUrl();
 
     location.href = '/categories/' + categoryId;
-  }  
+  }
 }
