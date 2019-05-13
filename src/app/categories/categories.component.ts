@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { DataService } from '../service/data.service';
 import { ICategory } from '../interfaces/ICategory';
 
@@ -25,7 +25,7 @@ export class CategoriesComponent implements OnInit {
             'so uncool, it’s cool. ' +
             'You know what we mean.';
 
-   constructor(private dataService: DataService) {}
+   constructor(private dataService: DataService, private router: Router) {}
 
    categories: ICategory[];
 
@@ -34,5 +34,9 @@ export class CategoriesComponent implements OnInit {
       this.categories = choice;
     });
   }
+  redirectToMovies(categoryId: number) {
+    // this.router.navigateByUrl();
 
+    location.href = '/categories/' + categoryId;
+  }
 }
