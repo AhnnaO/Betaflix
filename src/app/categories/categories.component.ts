@@ -24,10 +24,6 @@ export class CategoriesComponent implements OnInit {
             'Join the old school beta movement... ' +
             'so uncool, it’s cool. ' +
             'You know what we mean.';
-  // constructor(private route: ActivatedRoute) {
-  //   this.route.params.subscribe(myParams => {myParams['id'];
-  //   });
-  //  }
 
    constructor(private dataService: DataService, private router: Router) {}
 
