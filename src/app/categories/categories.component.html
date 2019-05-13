@@ -1,5 +1,5 @@
 <ul class="row no-gutters">
-    <li *ngFor="let category of categories" class="col-12 text-center">
+    <li *ngFor="let category of categories" class="col-12 text-center" (click)="redirectToMovies(category.id)">
         {{ category.name }}
     </li>
 </ul>
