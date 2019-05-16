@@ -26,8 +26,6 @@ describe('CategoriesComponent', () => {
     expect(component).toBeTruthy();
   });
 
-  it('should get categories', () => {
-    expect(component.redirectToMovies(5)).toBe('Action');
-  });
+
 
 });

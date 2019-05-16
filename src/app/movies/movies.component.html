@@ -1,5 +1,5 @@
 <ul>
   <li *ngFor="let movie of filteredMovies"> 
-      {{ movie.id }} {{ movie.name }} {{ movie.imageUrl }}
+      {{ movie.id }} {{ movie.name }} <img [src] = "movie.imageUrl" >
   </li>
 </ul>

@@ -7,18 +7,18 @@ import { ICategory } from '../interfaces/ICategory';
 @Injectable({
   providedIn: 'root'
 })
-export class MockDataService implements IDataService {
-  // productCategory: ICategory[
-  //   {id: 5,
-  //   name: 'Action'}
+export class MockDataService {
+  productCategory: ICategory[] = [
+    {id: 5,
+    name: 'Action'},
 
-  //   {id: 6,
-  //   name: 'Thriller'}
-  //   {id: 7,
-  //     name;: 'Comedy'}
-  //   {id: 8,
-  //   name: 'Sci-fi'}]}
-  // ];
+    {id: 6,
+    name: 'Thriller'},
+    {id: 7,
+      name: 'Comedy'},
+    {id: 8,
+    name: 'Sci-fi'}];
+
   products: IProduct[] = [
     {id: 76,
     name: 'The Dark Knight',
@@ -29,8 +29,8 @@ export class MockDataService implements IDataService {
     imageUrl: 'https://images-na.ssl-images-amazon.com/images/M/MV5BMTMxNTMwODM0NF5BMl5BanBnXkFtZTcwODAyMTk2Mw@@._V1_SY1000_CR0,0,675,1000_AL_.jpg',
     year: 2008,
     added: '2016-01-05T00:00:00',
-    productCategory: [{id: 5, name: 'Action'}, {id: 6, name: 'Thriller'}]},
-  
+    productCategory: [{categoryId: 5, category: ''}, {categoryId: 6, category: ''}]},
+
     {id: 77,
     name: 'Interstellar',
     description: 'A team of explorers travel through a wormhole in space in an attempt to ensure humanit"s survival.',
@@ -39,7 +39,7 @@ export class MockDataService implements IDataService {
     imageUrl: 'https://images-na.ssl-images-amazon.com/images/M/MV5BMjIxNTU4MzY4MF5BMl5BanBnXkFtZTgwMzM4ODI3MjE@._V1_SY1000_CR0,0,640,1000_AL_.jpg',
     year: 2014,
     added: '2017-07-16T00:00:00',
-    productCategory: [{id: 8, name: 'Sci-fi'}]}
+    productCategory: [{categoryId: 8, category: ''}]}
     ];
 
   getData(): Observable<IProduct[]> {
@@ -47,9 +47,8 @@ export class MockDataService implements IDataService {
     }
 
 
-  getCategory() {
-    // : Observable<ICategory[]
-  //   return of(this.productCategory);
+  getCategory(): Observable<ICategory[]> {
+    return of(this.productCategory);
   }
   constructor() { }
 }
