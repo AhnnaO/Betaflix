@@ -12,11 +12,12 @@ import { AboutComponent } from './about/about.component';
 import { HomeComponent } from './home/home.component';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { AdministrationComponent } from './administration/administration.component';
+import { MoviesComponent } from './movies/movies.component';
 
 
 const appRoutes = [
   {path: 'details/:id', component: DetailsComponent},
-  {path: 'category/:id', component: CategoriesComponent},
+  {path: 'movies/:id', component: MoviesComponent},
   {path: 'about', component: AboutComponent},
   {path: 'home', component: HomeComponent},
   {path: '', redirectTo: '/home', pathMatch: 'full'},
@@ -33,7 +34,8 @@ const appRoutes = [
     AboutComponent,
     HomeComponent,
     NotFoundComponent,
-    AdministrationComponent
+    AdministrationComponent,
+    MoviesComponent
   ],
   imports: [
     BrowserModule,

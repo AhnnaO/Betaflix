@@ -26,7 +26,8 @@ describe('CategoriesComponent', () => {
     expect(component).toBeTruthy();
   });
 
-  // it('should show categories', () => {
-  //   expect(component.dataService.toBeTruthy());
-  // });
+  it('should get categories', () => {
+    expect(component.redirectToMovies(5)).toBe('Action');
+  });
+
 });

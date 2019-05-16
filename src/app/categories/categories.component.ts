@@ -4,6 +4,7 @@ import { DataService } from '../service/data.service';
 import { ICategory } from '../interfaces/ICategory';
 
 import { HttpClient } from '@angular/common/http';
+import { IProduct } from '../interfaces/IProduct';
 
 @Component({
   selector: 'app-categories',
@@ -26,17 +27,18 @@ export class CategoriesComponent implements OnInit {
             'You know what we mean.';
 
    constructor(private dataService: DataService, private router: Router) {}
-
-   categories: ICategory[];
+    categories: ICategory[];
 
   ngOnInit() {
     this.dataService.getCategory().subscribe((choice) => {
       this.categories = choice;
     });
+
   }
   redirectToMovies(categoryId: number) {
     // this.router.navigateByUrl();
 
-    location.href = '/categories/' + categoryId;
+    location.href = '/movies/' + categoryId;
   }
+
 }
