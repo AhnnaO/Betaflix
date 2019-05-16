@@ -47,8 +47,9 @@ export class MockDataService implements IDataService {
     }
 
 
-  // getCategory(): Observable<ICategory[] {
+  getCategory() {
+    // : Observable<ICategory[]
   //   return of(this.productCategory);
-  // }
+  }
   constructor() { }
 }

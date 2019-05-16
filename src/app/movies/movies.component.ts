@@ -29,8 +29,10 @@ export class MoviesComponent implements OnInit {
           this.dataService.getCategory().subscribe((categoryArray) => {
             this.dataService.getData().subscribe((movies) => {
               console.log(categoryId);
+// tslint:disable-next-line: prefer-for-of
               for (let i = 0; i < movies.length; i++) {
               // const categoryArray = movies[i].productCategory;
+// tslint:disable-next-line: prefer-for-of
               for (let j = 0; j < categoryArray.length; j++) {
                   console.log(categoryArray[j].id);
                   if (categoryId === categoryArray[j].id) {
