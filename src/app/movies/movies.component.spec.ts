@@ -38,7 +38,7 @@ describe('MoviesComponent', () => {
   });
 
   it('should find product from category', () => {
-    expect(component.filteredMovies).toBeDefined();
+    expect(component.filteredMovies.length).toBe(0);
     component.findProductsByCategory(5);
     expect(component.filteredMovies[0].name).toBe('The Dark Knight');
   });
