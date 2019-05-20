@@ -1,3 +1,8 @@
 <p>
   details works!
 </p>
+<ul>
+  <li *ngFor="let movie of singleMovie"> 
+      {{ movie.id }} {{ movie.name }} <img [src] = "movie.imageUrl" >
+  </li>
+</ul>

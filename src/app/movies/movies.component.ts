@@ -22,9 +22,13 @@ export class MoviesComponent implements OnInit {
 
     this.route.params.subscribe(myParams => {
       const categoryId: number = +myParams.id;
-
+      const id: number = +myParams.id;
       this.findProductsByCategory(categoryId);
     });
+  }
+  redirectToDetails(id: number) {
+
+    location.href = '/details/' + id;
   }
 
   findProductsByCategory(categoryId: number) {
