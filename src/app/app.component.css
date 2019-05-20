@@ -10,6 +10,7 @@ h1{
         -webkit-linear-gradient(rgb(9, 170, 205), rgb(211, 10, 167));
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
+    border: rgb(211, 10, 167) 1px solid;
 }
 
 h2{
@@ -18,4 +19,27 @@ h2{
     font-weight: 500;
     font-size: 2em;
     color: rgb(33, 228, 111);
+    border: rgb(211, 10, 167) 1px solid;
+}
+
+p{
+    font-family: Geo;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 1.0em;
+    color: rgb(33, 228, 111);
+    margin: 0px auto;
+    padding: 5%;
+    border: rgb(211, 10, 167) 1px solid;    
+}
+
+
+
+footer{
+    border: rgb(211, 10, 167) 1px solid;
+}
+
+.betaFlixImage{
+    width: 150px;
+    height: auto;
 }

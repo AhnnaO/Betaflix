@@ -1,5 +1,5 @@
 <ul>
-  <li *ngFor="let movie of filteredMovies" (click)="redirectToDetails(id)"> 
+  <li *ngFor="let movie of filteredMovies" (click)="redirectToDetails(movie.id)"> 
       {{ movie.id }} {{ movie.name }} <img [src] = "movie.imageUrl" >
   </li>
 </ul>

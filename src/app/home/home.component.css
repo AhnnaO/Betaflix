@@ -11,12 +11,3 @@ li, a{
     color: rgb(33, 228, 111);
     text-decoration-line: underline;
 }
-
-footer{
-    border: rgb(211, 10, 167) 1px solid;
-}
-
-.betaFlixImage{
-    width: 150px;
-    height: auto;
-}

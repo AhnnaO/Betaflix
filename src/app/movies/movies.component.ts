@@ -18,17 +18,20 @@ export class MoviesComponent implements OnInit {
   constructor(private dataService: DataService, private route: ActivatedRoute) { }
 
   ngOnInit() {
+
     this.filteredMovies = [];
 
     this.route.params.subscribe(myParams => {
       const categoryId: number = +myParams.id;
-      const id: number = +myParams.id;
+      // const id: number = +myParams.movies.id;
       this.findProductsByCategory(categoryId);
     });
-  }
-  redirectToDetails(id: number) {
 
+  }
+
+  redirectToDetails(id: number) {
     location.href = '/details/' + id;
+    console.log(id);
   }
 
   findProductsByCategory(categoryId: number) {

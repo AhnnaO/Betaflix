@@ -1,8 +1,14 @@
-<p>
-  details works!
-</p>
-<ul>
-  <li *ngFor="let movie of singleMovie"> 
-      {{ movie.id }} {{ movie.name }} <img [src] = "movie.imageUrl" >
+<ul text-center>
+  <li> 
+    {{ movie.name }}
+  </li>
+  <li>
+    <img [src]="movie.imageUrl">
+  </li>
+  <li>
+    {{ movie.description }}
+  </li>
+  <li>
+    {{ movie.price }} kr
   </li>
 </ul>

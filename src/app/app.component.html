@@ -1,13 +1,13 @@
 <app-navigation></app-navigation>
 
-  <div class="row">
-    <h1 class="col-12 text-center">
+  <div class="text-center">
+    <h1>
       {{ title }}
     </h1>
   </div>
 
-  <div class="row">
-    <h2 class="col-12 text-center">
+  <div class="text-center">
+    <h2>
       {{ tagLine }}
     </h2>
   </div>
@@ -16,3 +16,15 @@
   <router-outlet></router-outlet>
 
 
+
+  <footer class="text-center">
+    <div>
+      <p class="slogan"> 
+        {{ slogan }}
+      </p>
+    </div>
+    
+    <div>
+      <img [src]="betaFlixImage" class="betaFlixImage"/>
+    </div>
+  </footer>

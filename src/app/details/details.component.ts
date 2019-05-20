@@ -11,10 +11,10 @@ import { IProduct } from '../interfaces/IProduct';
 export class DetailsComponent implements OnInit {
 
   constructor(private route: ActivatedRoute, private dataService: DataService) { }
-  singleMovie = [];
-  movies: IProduct[];
+
+  movie: IProduct;
+
   ngOnInit() {
-    this.singleMovie = [];
 
     this.route.params.subscribe(myParams => {
       const id: number = +myParams.id;
@@ -27,10 +27,8 @@ export class DetailsComponent implements OnInit {
       this.dataService.getData().subscribe((movies) => {
 // tslint:disable-next-line: prefer-for-of
         for (let i = 0; i < movies.length; i++) {
-          for (let j = 0; j < movies[i].id; j++) {
-          if (movies[j].id = movies[i].id) {
-            this.singleMovie.push(movies[i]);
-          }
+          if (movies[i].id === id) {
+            this.movie = movies[i];
           }
         }
       });
