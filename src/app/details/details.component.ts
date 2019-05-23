@@ -13,19 +13,19 @@ export class DetailsComponent implements OnInit {
 
   constructor(private route: ActivatedRoute, private dataService: DataService) { }
 
-  movie: IProduct;
+  movie: IProduct = { id: 0, name: '', price: 0, description: '', imageUrl: '', year: 0, added: '', productCategory: [] };
   details: ICartItem;
 
   ngOnInit() {
 
     this.route.paramMap.subscribe(myParams => {
       const id: number = +myParams.get('id');
-
       this.findMovieById(id);
     });
   }
 
   findMovieById(id: number) {
+
     if (id > 0) {
       this.dataService.getData().subscribe((movies) => {
 // tslint:disable-next-line: prefer-for-of
@@ -37,9 +37,9 @@ export class DetailsComponent implements OnInit {
       });
     }
   }
-  addToCart(): void {
-    // const details: ICartItem = {product, amount};
-    this.dataService.addToCart(this.details);
+  addToCart(amount: number): void {
+    const details: ICartItem = {product: this.movie, amount};
+    this.dataService.addToCart(details);
     // this.router.navigate(['/cart']);
   }
 }

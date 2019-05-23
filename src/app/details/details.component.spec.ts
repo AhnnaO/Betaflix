@@ -47,4 +47,11 @@ describe('DetailsComponent', () => {
     component.findMovieById(76);
     expect(component.movie.id).toBe(76);
   });
+
+  it('should add to cart', () => {
+    // expect(component.addToCart).();
+    component.addToCart(2);
+
+    expect(JSON.parse(sessionStorage.getItem('cart')).length).toBe(1);
+  })
 });

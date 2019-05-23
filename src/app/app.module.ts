@@ -37,7 +37,8 @@ const appRoutes = [
     HomeComponent,
     NotFoundComponent,
     AdministrationComponent,
-    MoviesComponent
+    MoviesComponent,
+    CartComponent
   ],
   imports: [
     BrowserModule,

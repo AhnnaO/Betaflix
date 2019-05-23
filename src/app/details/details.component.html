@@ -1,5 +1,5 @@
 <ul text-center>
-  <li> 
+  <li>
     {{ movie.name }}
   </li>
   <li>
@@ -13,7 +13,7 @@
   </li>
 </ul>
 <div class="text-center">
-  <label for="productQuantity"></label>
-  <input type="number" name="productQuantity"/>
-  <button type="submit" (click)="addToCart">Add to Cart</button>
+  <label for="amount"></label>
+  <input type="number" id="amount" #amount/>
+  <button type="submit" (click)="addToCart(amount.value)">Add to Cart</button>
 </div>

@@ -11,7 +11,7 @@ import { ICartItem } from '../interfaces/ICartItem';
 })
 export class DataService implements IDataService {
 
-  cart: ICartItem[];
+  cart: ICartItem[] = [];
 
   constructor(private httpClient: HttpClient) { }
   // getOrder(): {('https://medieinstitutet-wie-products.azurewebsites.net/api/orders')};
@@ -25,7 +25,8 @@ export class DataService implements IDataService {
 
   addToCart(details: ICartItem) {
     this.cart.push({ product: details.product, amount: details.amount});
-
+    console.log(details.amount);
+    console.log(details.product);
     sessionStorage.setItem('cart', JSON.stringify(this.cart));
   }
 }
