@@ -13,6 +13,7 @@ import { HomeComponent } from './home/home.component';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { AdministrationComponent } from './administration/administration.component';
 import { MoviesComponent } from './movies/movies.component';
+import { CartComponent } from './cart/cart.component';
 
 
 const appRoutes = [
@@ -35,7 +36,8 @@ const appRoutes = [
     HomeComponent,
     NotFoundComponent,
     AdministrationComponent,
-    MoviesComponent
+    MoviesComponent,
+    CartComponent
   ],
   imports: [
     BrowserModule,
