@@ -14,7 +14,11 @@ export class DataService implements IDataService {
   cart: ICartItem[] = [];
 
   constructor(private httpClient: HttpClient) { }
-  // getOrder(): {('https://medieinstitutet-wie-products.azurewebsites.net/api/orders')};
+
+  createOrder(finalOrder: ICartItem): Observable<ICartItem[]> {
+    return this.httpClient.post<ICartItem[]>('https://medieinstitutet-wie-products.azurewebsites.net/api/orders', finalOrder);
+  }
+
   getData(): Observable<IProduct[]> {
     return this.httpClient.get<IProduct[]>('https://medieinstitutet-wie-products.azurewebsites.net/api/products');
   }
@@ -25,8 +29,12 @@ export class DataService implements IDataService {
 
   addToCart(details: ICartItem) {
     this.cart.push({ product: details.product, amount: details.amount});
-    console.log(details.amount);
-    console.log(details.product);
     sessionStorage.setItem('cart', JSON.stringify(this.cart));
   }
+
+
+
+  // adminOrder get instead of post and remember at end https:/orders to add /?companyId=4
+  // deleteOrder delete instead of post and add "+ id" for order id at end of https:/orders/
+
 }

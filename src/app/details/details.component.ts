@@ -40,6 +40,6 @@ export class DetailsComponent implements OnInit {
   addToCart(amount: number): void {
     const details: ICartItem = {product: this.movie, amount};
     this.dataService.addToCart(details);
-    // this.router.navigate(['/cart']);
+    // this.route.navigate(['/cart']);
   }
 }
