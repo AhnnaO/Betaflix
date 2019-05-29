@@ -21,6 +21,8 @@ describe('DataService', () => {
 
   it('should get categories', () => {
     const service: DataService = TestBed.get(DataService);
-    expect(service.getCategory()).toBeTruthy();
+    service.getCategory().subscribe(data => {
+      expect(data.length).toBeGreaterThan(0);
+    });
   });
 });

@@ -1,0 +1,10 @@
+tr{
+    font-family: Geo;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 1.6em;
+    color: rgb(33, 228, 111);
+}
+th{
+    text-decoration-line: underline;
+}

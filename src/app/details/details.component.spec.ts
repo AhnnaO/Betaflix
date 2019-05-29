@@ -51,7 +51,7 @@ describe('DetailsComponent', () => {
   it('should add to cart', () => {
     // expect(component.addToCart).();
     component.addToCart(2);
+    expect (component.details.amount).toBe(2);
+  });
 
-    expect(JSON.parse(sessionStorage.getItem('cart')).length).toBe(1);
-  })
 });

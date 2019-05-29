@@ -1,3 +1,26 @@
-<p>
-  cart works!
-</p>
+<div class="text-center">
+<table>
+  <thead>
+    <tr>
+      <th>Movie</th>
+      <th>Amount</th>
+      <th>Price</th>
+      <th>Total Price</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let detail of savedCart">
+      <td>
+        {{ detail.product.name }}
+      </td>
+      <td>
+        {{ detail.amount }}
+      </td>
+      <td>
+        {{ detail.product.price }}
+      </td>
+      <td>{{ detail.selectionTotal }}</td>
+    </tr>
+  </tbody>
+</table>
+</div>
