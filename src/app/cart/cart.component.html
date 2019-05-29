@@ -5,7 +5,7 @@
       <th>Movie</th>
       <th>Amount</th>
       <th>Price</th>
-      <th>Total Price</th>
+      <th>Selection Price</th>
     </tr>
   </thead>
   <tbody>
@@ -20,6 +20,12 @@
         {{ detail.product.price }}
       </td>
       <td>{{ detail.selectionTotal }}</td>
+    </tr>
+    <tr>
+      Total Price:
+    </tr>
+    <tr>
+      {{ totalPrice }}
     </tr>
   </tbody>
 </table>

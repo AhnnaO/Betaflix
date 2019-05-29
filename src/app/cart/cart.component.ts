@@ -23,6 +23,10 @@ export class CartComponent implements OnInit {
 
   grandTotal() {
     this.totalPrice = 0;
-    for ()
+// tslint:disable-next-line: prefer-for-of
+    for (let i = 0; i < this.savedCart.length; i++) {
+      this.totalPrice += this.savedCart[i].selectionTotal;
+    }
+    return this.totalPrice;
   }
 }
