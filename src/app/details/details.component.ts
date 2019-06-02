@@ -15,7 +15,7 @@ export class DetailsComponent implements OnInit {
 
   movie: IProduct = { id: 0, name: '', price: 0, description: '', imageUrl: '', year: 0, added: '', productCategory: [] };
   details: ICartItem[] = [];
-  selectionTotal = 0;
+  
   ngOnInit() {
 
     this.route.paramMap.subscribe(myParams => {
@@ -40,33 +40,32 @@ export class DetailsComponent implements OnInit {
   }
 
   addToCart(amount: number) {
-    const newItems: ICartItem = {product: this.movie, amount, selectionTotal: this.selectionTotal};
+    let selectionTotal = 0;
+    const newItems: ICartItem = {product: this.movie, amount, selectionTotal};
     this.details = this.dataService.getSessionCartItems();
     let foundMovie = false;
 
 // tslint:disable-next-line: prefer-for-of
       for (let i = 0; i < this.details.length; i++) {
-        this.selectionTotal = this.details[i].product.price * this.details[i].amount;
-        this.details[i].selectionTotal = this.selectionTotal;
+
         if (newItems.product.id === this.details[i].product.id) {
-          this.selectionTotal = this.details[i].product.price * this.details[i].amount;
           this.details[i].amount += newItems.amount;
-          this.details[i].selectionTotal = this.selectionTotal;
-// tslint:disable-next-line: no-unused-expression
+          this.details[i].selectionTotal = this.details[i].product.price * this.details[i].amount;
           this.dataService.addToCart(this.details);
           foundMovie = true;
         }
 
 // tslint:disable-next-line: align
       } if (!foundMovie) {
-        this.selectionTotal = newItems.product.price * newItems.amount;
-        this.details.push({ product: newItems.product, amount: newItems.amount, selectionTotal: this.selectionTotal});
+        // selectionTotal = newItems.product.price * newItems.amount;
+        this.details.push({ product: newItems.product, amount: newItems.amount, selectionTotal: newItems.product.price * newItems.amount});
         this.dataService.addToCart(this.details);
       }
   }
 
   goToCart() {
   location.href = '/cart';
+  console.log('should go to cart');
   }
 
 }

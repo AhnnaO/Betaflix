@@ -1,5 +1,5 @@
-<div class="text-center">
-<table>
+<div class="row">
+<table class="text-center">
   <thead>
     <tr>
       <th>Movie</th>
@@ -19,7 +19,10 @@
       <td>
         {{ detail.product.price }}
       </td>
-      <td>{{ detail.selectionTotal }}</td>
+      <td>
+        {{ detail.selectionTotal }}
+      </td>
+      <td><button (click)="removeSelectionFromCart()">Remove</button></td>
     </tr>
     <tr>
       Total Price:
