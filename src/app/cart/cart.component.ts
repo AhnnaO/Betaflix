@@ -2,9 +2,10 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { DataService } from '../service/data.service';
 import { ICartItem } from '../interfaces/ICartItem';
-import { IProduct } from '../interfaces/IProduct';
-import { MoviesComponent } from '../movies/movies.component';
-import { ArgumentOutOfRangeError } from 'rxjs';
+import { IOrder, IOrderRow } from '../interfaces/IOrder';
+import { FormBuilder, Validators } from '@angular/forms';
+import * as moment from 'moment';
+
 
 
 @Component({
@@ -15,10 +16,15 @@ import { ArgumentOutOfRangeError } from 'rxjs';
 export class CartComponent implements OnInit {
   savedCart: ICartItem[] = [];
   totalPrice = 0;
-  // movie: IProduct = { id: 0, name: '', price: 0, description: '', imageUrl: '', year: 0, added: '', productCategory: [] };
-  //  = { id: 0, name: '', price: 0, description: '', imageUrl: '', year: 0, added: '', productCategory: [] };
+  userInformation = this.fb.group({
+    userName: ['', Validators.required],
+    userEmail: ['', Validators.required],
+    paymentType: ['', Validators.required]
+  });
+  orderRows: IOrderRow[] = [];
 
-  constructor(private route: ActivatedRoute, private dataService: DataService) { }
+  constructor(private route: ActivatedRoute, private dataService: DataService,
+              private fb: FormBuilder) { }
 
   ngOnInit() {
     this.savedCart = JSON.parse(sessionStorage.getItem('cart'));
@@ -42,5 +48,34 @@ export class CartComponent implements OnInit {
       sessionStorage.setItem('cart', JSON.stringify(this.savedCart));
       this.grandTotal();
     }
+  }
+  createOrderRow(){
+    for ( let i = 0; i < this.savedCart.length; i++) {
+      this.orderRows.push(
+        {ProductId: this.savedCart[i].product.id, Amount: this.savedCart[i].amount, Id: 0 }
+      );
+    }
+  }
+  createOrder() {
+    this.createOrderRow();
+    console.log(this.userInformation.value);
+    const orders = {
+      id: 0,
+      companyId: 4,
+      created: moment().format('LLLL'),
+      createdBy: this.userInformation.value.userName,
+      paymentMethod: this.userInformation.value.paymentType,
+      totalPrice: this.grandTotal(),
+      status: 0,
+      orderRows: this.orderRows
+    };
+
+    console.log(orders);
+    this.dataService.createOrder(orders).subscribe(
+      response => {console.log(response); },
+      err => {console.log(err.message); },
+      () => {console.log('completed'); }
+    );
+
   }
 }

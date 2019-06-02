@@ -2,6 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
+import { FormsModule, ReactiveFormsModule} from '@angular/forms';
 
 import { AppComponent } from './app.component';
 import { NavigationComponent } from './navigation/navigation.component';
@@ -14,6 +15,7 @@ import { NotFoundComponent } from './not-found/not-found.component';
 import { AdministrationComponent } from './administration/administration.component';
 import { MoviesComponent } from './movies/movies.component';
 import { CartComponent } from './cart/cart.component';
+import { from } from 'rxjs';
 
 
 const appRoutes = [
@@ -43,7 +45,9 @@ const appRoutes = [
   imports: [
     BrowserModule,
     RouterModule.forRoot(appRoutes),
-    HttpClientModule
+    HttpClientModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
   exports: [
     RouterModule

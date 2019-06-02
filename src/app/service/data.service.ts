@@ -6,6 +6,7 @@ import { IDataService } from '../interfaces/IDataService';
 import { ICategory } from '../interfaces/ICategory';
 import { ICartItem } from '../interfaces/ICartItem';
 import { CartComponent } from '../cart/cart.component';
+import { IOrder } from '../interfaces/IOrder';
 
 @Injectable({
   providedIn: 'root'
@@ -20,8 +21,8 @@ export class DataService implements IDataService {
 
   constructor(private httpClient: HttpClient) { }
 
-  createOrder(finalOrder: ICartItem): Observable<ICartItem[]> {
-    return this.httpClient.post<ICartItem[]>(this.orderUrl, finalOrder);
+  createOrder(finalOrder: IOrder): Observable<IOrder> {
+    return this.httpClient.post<IOrder>(this.orderUrl, finalOrder);
   }
 
   // deleteOrder(): Observable<IOrder[]> {
