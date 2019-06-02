@@ -22,7 +22,7 @@
       <td>
         {{ detail.selectionTotal }}
       </td>
-      <td><button (click)="removeSelectionFromCart()">Remove</button></td>
+      <td><button (click)="removeSelectionFromCart(detail.product.id)">Remove</button></td>
     </tr>
     <tr>
       Total Price:

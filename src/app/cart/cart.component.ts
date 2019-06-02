@@ -4,6 +4,7 @@ import { DataService } from '../service/data.service';
 import { ICartItem } from '../interfaces/ICartItem';
 import { IProduct } from '../interfaces/IProduct';
 import { MoviesComponent } from '../movies/movies.component';
+import { ArgumentOutOfRangeError } from 'rxjs';
 
 
 @Component({
@@ -14,7 +15,7 @@ import { MoviesComponent } from '../movies/movies.component';
 export class CartComponent implements OnInit {
   savedCart: ICartItem[] = [];
   totalPrice = 0;
-  movie: IProduct[] =[];
+  // movie: IProduct = { id: 0, name: '', price: 0, description: '', imageUrl: '', year: 0, added: '', productCategory: [] };
   //  = { id: 0, name: '', price: 0, description: '', imageUrl: '', year: 0, added: '', productCategory: [] };
 
   constructor(private route: ActivatedRoute, private dataService: DataService) { }
@@ -33,16 +34,13 @@ export class CartComponent implements OnInit {
     return this.totalPrice;
   }
 
-  removeSelectionFromCart() {
-    this.dataService.getData().subscribe((selectedMovie) =>
-    this.movie = selectedMovie);
-    console.log(this.movie);
-    
+  removeSelectionFromCart(id: number) {
     for (let i = 0; i < this.savedCart.length; i++) {
-      // if (this.savedCart[i].product.id === ) {
+      if (this.savedCart[i].product.id === id) {
         this.savedCart.splice(i, 1);
+      }
+      sessionStorage.setItem('cart', JSON.stringify(this.savedCart));
+      this.grandTotal();
     }
-    sessionStorage.setItem('cart', JSON.stringify(this.savedCart));
   }
-  
 }

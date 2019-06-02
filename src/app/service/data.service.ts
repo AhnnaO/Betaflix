@@ -13,19 +13,27 @@ import { CartComponent } from '../cart/cart.component';
 export class DataService implements IDataService {
 
   cart: ICartItem[] = [];
+  Url = 'https://medieinstitutet-wie-products.azurewebsites.net/api/products';
+  categoryUrl = 'https://medieinstitutet-wie-products.azurewebsites.net/api/categories';
+  orderUrl = 'https://medieinstitutet-wie-products.azurewebsites.net/api/orders';
+  getOrderUrl = 'https://medieinstitutet-wie-products.azurewebsites.net/api/orders?companyId=4';
 
   constructor(private httpClient: HttpClient) { }
 
   createOrder(finalOrder: ICartItem): Observable<ICartItem[]> {
-    return this.httpClient.post<ICartItem[]>('https://medieinstitutet-wie-products.azurewebsites.net/api/orders', finalOrder);
+    return this.httpClient.post<ICartItem[]>(this.orderUrl, finalOrder);
   }
 
+  // deleteOrder(): Observable<IOrder[]> {
+  //   return this.httpClient.delete<IOrder[]>(this.orderUrl) + id;
+  // }
+
   getData(): Observable<IProduct[]> {
-    return this.httpClient.get<IProduct[]>('https://medieinstitutet-wie-products.azurewebsites.net/api/products');
+    return this.httpClient.get<IProduct[]>(this.Url);
   }
 
   getCategory(): Observable<ICategory[]> {
-    return this.httpClient.get<ICategory[]>('https://medieinstitutet-wie-products.azurewebsites.net/api/categories');
+    return this.httpClient.get<ICategory[]>(this.categoryUrl);
   }
 
   addToCart(details: ICartItem[]): void {
