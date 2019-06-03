@@ -25,6 +25,10 @@ export class DataService implements IDataService {
     return this.httpClient.post<IOrder>(this.orderUrl, finalOrder);
   }
 
+  showOrder(): Observable<IOrder[]> {
+    return this.httpClient.get<IOrder[]>(this.getOrderUrl);
+  }
+
   // deleteOrder(): Observable<IOrder[]> {
   //   return this.httpClient.delete<IOrder[]>(this.orderUrl) + id;
   // }
@@ -37,8 +41,8 @@ export class DataService implements IDataService {
     return this.httpClient.get<ICategory[]>(this.categoryUrl);
   }
 
-  addToCart(details: ICartItem[]): void {
-    sessionStorage.setItem('cart', JSON.stringify(this.cart));
+  addToCart(details: ICartItem[]) {
+    return sessionStorage.setItem('cart', JSON.stringify(this.cart));
   }
 
   getSessionCartItems() {

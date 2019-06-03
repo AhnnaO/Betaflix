@@ -1,5 +1,5 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-
+import { HttpClient } from '@angular/common/http';
 import { AdministrationComponent } from './administration.component';
 
 describe('AdministrationComponent', () => {
@@ -8,7 +8,8 @@ describe('AdministrationComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ AdministrationComponent ]
+      declarations: [ AdministrationComponent,
+      HttpClient ]
     })
     .compileComponents();
   }));

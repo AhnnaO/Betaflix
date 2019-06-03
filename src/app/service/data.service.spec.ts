@@ -25,4 +25,11 @@ describe('DataService', () => {
       expect(data.length).toBeGreaterThan(0);
     });
   });
+
+  it('should get orders', () => {
+    const service: DataService = TestBed.get(DataService);
+    service.showOrder().subscribe(data => {
+      expect(data.length).toBeGreaterThan(0);
+    });
+  });
 });

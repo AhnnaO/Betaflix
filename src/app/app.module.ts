@@ -16,9 +16,12 @@ import { AdministrationComponent } from './administration/administration.compone
 import { MoviesComponent } from './movies/movies.component';
 import { CartComponent } from './cart/cart.component';
 import { from } from 'rxjs';
+import { ConfirmationComponent } from './confirmation/confirmation.component';
 
 
 const appRoutes = [
+  {path: 'administration', component: AdministrationComponent},
+  {path: 'confirmation', component: ConfirmationComponent},
   {path: 'cart', component: CartComponent},
   {path: 'details/:id', component: DetailsComponent},
   {path: 'movies/:id', component: MoviesComponent},
@@ -40,7 +43,8 @@ const appRoutes = [
     NotFoundComponent,
     AdministrationComponent,
     MoviesComponent,
-    CartComponent
+    CartComponent,
+    ConfirmationComponent
   ],
   imports: [
     BrowserModule,

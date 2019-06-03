@@ -19,7 +19,7 @@ describe('DetailsComponent', () => {
     TestBed.configureTestingModule({
       declarations: [ DetailsComponent ],
       imports: [ HttpClientModule, RouterTestingModule ],
-      providers: [ { provide: ActivatedRoute, useValue: stub }]
+      providers: [ { provide: ActivatedRoute, useValue: stub } ]
     })
    // Override component's own provider to test with MockData.service
    .overrideComponent(DetailsComponent, {
@@ -51,7 +51,7 @@ describe('DetailsComponent', () => {
   it('should add to cart', () => {
     // expect(component.addToCart).();
     component.addToCart(2);
-    expect (component.details.amount).toBe(2);
+    expect (component.details.length).toBe(2);
   });
 
 });

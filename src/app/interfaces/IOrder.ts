@@ -14,5 +14,4 @@ export interface IOrder {
 export interface IOrderRow {
     ProductId: number;
     Amount: number;
-    Id: number;
 }

@@ -52,7 +52,7 @@ export class CartComponent implements OnInit {
   createOrderRow(){
     for ( let i = 0; i < this.savedCart.length; i++) {
       this.orderRows.push(
-        {ProductId: this.savedCart[i].product.id, Amount: this.savedCart[i].amount, Id: 0 }
+        {ProductId: this.savedCart[i].product.id, Amount: this.savedCart[i].amount}
       );
     }
   }
@@ -63,7 +63,7 @@ export class CartComponent implements OnInit {
       id: 0,
       companyId: 4,
       created: moment().format('LLLL'),
-      createdBy: this.userInformation.value.userName,
+      createdBy: this.userInformation.value.userEmail,
       paymentMethod: this.userInformation.value.paymentType,
       totalPrice: this.grandTotal(),
       status: 0,
@@ -76,6 +76,11 @@ export class CartComponent implements OnInit {
       err => {console.log(err.message); },
       () => {console.log('completed'); }
     );
-
+    sessionStorage.clear();
+    // this.savedCart = JSON.parse(sessionStorage.getItem('cart'));
+    this.goToConfirmation();
+  }
+  goToConfirmation() {
+  location.href = '/confirmation';
   }
 }

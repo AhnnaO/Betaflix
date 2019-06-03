@@ -1,3 +1,32 @@
-<p>
-  administration works!
-</p>
+<div>
+<table>
+  <thead><br>
+    <tr>
+      <th>Order Date</th>
+      <th>Id</th>
+      <th>Customer</th>
+      <th>Total Price</th>
+      <th>Payment Method</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let order of postedOrder"><br>
+      <td>
+        {{ order.created }}
+      </td>
+      <td>
+        {{ order.id}}
+      </td>
+      <td>
+        {{ order.createdBy }}
+      </td>
+      <td>
+        {{ order.totalPrice }}
+      </td>
+      <td>
+        {{ order.paymentMethod }}
+      </td>
+    </tr>
+  </tbody>
+</table>
+</div>

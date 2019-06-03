@@ -4,11 +4,12 @@ import { IProduct } from '../interfaces/IProduct';
 import { IDataService } from '../interfaces/IDataService';
 import { ICategory } from '../interfaces/ICategory';
 import { ICartItem } from '../interfaces/ICartItem';
+import { IOrder } from '../interfaces/IOrder';
 
 @Injectable({
   providedIn: 'root'
 })
-export class MockDataService {
+export class MockDataService implements IDataService {
   productCategory: ICategory[] = [
     {id: 5,
     name: 'Action'},
@@ -59,6 +60,18 @@ export class MockDataService {
       selectionTotal: 298}
     ];
 
+    order: IOrder[] = [
+      {id: 0,
+      companyId: 4,
+      created: '2019-06-02T14:39:00',
+      createdBy: 'Ahnna',
+      paymentMethod: 'credit card',
+      totalPrice: 298,
+      status: 0,
+      orderRows: [{ProductId: 76, Amount: 2}]
+      }
+    ];
+
   getData(): Observable<IProduct[]> {
       return of(this.products);
     }
@@ -67,8 +80,21 @@ export class MockDataService {
     return of(this.productCategory);
   }
 
-  addToCart(): Observable<ICartItem[]> {
-  return of(this.cart);
+  addToCart(details: ICartItem[]) {
+    return this.cart;
   }
+
+  getSessionCartItems() {
+
+  }
+
+  removeSelection() {
+
+  }
+
+  showOrder(): Observable<IOrder[]> {
+    return of(this.order);
+  }
+
   constructor() { }
 }
