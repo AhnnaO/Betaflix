@@ -13,6 +13,7 @@ export class HomeComponent implements OnInit {
   thrillerLogo = '../assets/images/Thriller logo.svg';
   sciFiLogo = '../assets/images/Sci-Fi logo.svg';
 
+
   constructor() { }
 
   ngOnInit() {

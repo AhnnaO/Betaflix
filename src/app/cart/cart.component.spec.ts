@@ -7,6 +7,7 @@ import { RouterTestingModule } from '@angular/router/testing';
 import { ActivatedRoute } from '@angular/router';
 import { DataService } from '../service/data.service';
 import { MockDataService } from '../service/mock-data.service';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 describe('CartComponent', () => {
   let component: CartComponent;
@@ -17,7 +18,7 @@ describe('CartComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [ CartComponent ],
-      imports: [ HttpClientModule, RouterTestingModule],
+      imports: [ HttpClientModule, RouterTestingModule, FormsModule, ReactiveFormsModule],
       providers: [ { provide: ActivatedRoute, useValue: stub }]
     })
     .overrideComponent(CartComponent, {

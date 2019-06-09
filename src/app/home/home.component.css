@@ -11,3 +11,8 @@ li, a{
     color: rgb(33, 228, 111);
     text-decoration-line: underline;
 }
+
+img{
+    height: 35px;
+    margin: 5%;
+}

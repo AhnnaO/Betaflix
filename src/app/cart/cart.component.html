@@ -1,5 +1,5 @@
 <div class="row">
-<table class="text-center">
+  <table class="table text-center">
   <thead>
     <tr>
       <th>Movie</th>
@@ -32,10 +32,30 @@
     </tr>
   </tbody>
 </table>
+  <!-- <div class="text-center">
+      <span class="col-3">Name</span>
+      <span class="col-3">Amount</span>
+      <span class="col-3">Price</span>
+      <span class="col-3">Selection Total</span>
+  </div>
+  <br>
+  <ul class="text-center" *ngFor="let detail of savedCart">
+    <li>
+      <span class="col-2">{{ detail.product.name }}</span>
+      <span class="col-2">{{ detail.amount }}</span>
+      <span class="col-2">{{ detail.product.price }}</span>
+      <span class="col-2">{{ detail.selectionTotal }}</span>
+      <span class="col-2"><button (click)="removeSelectionFromCart(detail.product.id)">Remove</button></span>
+    </li>
+    <li>
+      <span class="col-5">Total Price:</span>
+      <span class="col-5">{{ totalPrice }}</span>
+    </li>
+  </ul> -->
 </div>
-<form [formGroup]="userInformation" (ngSubmit)="createOrder()">
+<form class="form" [formGroup]="userInformation" (ngSubmit)="createOrder()">
   <label for="userName">Full Name</label>
-  <input type="text" id="userName" formControlName="userName"/>
+  <input type="text" id="userName" formControlName="userName" />
   <br>
   <label for="userEmail">E-mail</label>
   <input type="email" name="" id="userEmail" formControlName="userEmail">
@@ -46,5 +66,6 @@
     <option value="payPal">PayPal</option>
     <option value="invoice">Invoice</option>
   </select>
+  <br>
   <button type="submit">Place order</button>
 </form>

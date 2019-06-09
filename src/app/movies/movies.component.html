@@ -1,5 +1,11 @@
-<ul>
+<ul class="text-center">
   <li *ngFor="let movie of filteredMovies" (click)="redirectToDetails(movie.id)"> 
-      {{ movie.id }} {{ movie.name }} <img [src] = "movie.imageUrl" >
+      <!-- {{ movie.productCategory.categoryId }} -->
+      <br>
+      {{ movie.id }} 
+      <br>
+      {{ movie.name }} 
+      <br>
+      <img [src] = "movie.imageUrl" >
   </li>
 </ul>

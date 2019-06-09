@@ -27,8 +27,12 @@ export class CartComponent implements OnInit {
               private fb: FormBuilder) { }
 
   ngOnInit() {
-    this.savedCart = JSON.parse(sessionStorage.getItem('cart'));
+    // this.savedCart = JSON.parse(sessionStorage.getItem('cart'));
+    this.savedCartItems();
     this.grandTotal();
+  }
+  savedCartItems() {
+    this.savedCart = this.dataService.getSessionCartItems();
   }
 
   grandTotal() {

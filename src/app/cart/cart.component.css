@@ -1,10 +1,35 @@
+.table{
+    margin: 20px;
+}
+
 tr, form{
     font-family: Geo;
     font-style: normal;
     font-weight: 500;
-    font-size: 1.6em;
+    font-size: 1.0em;
     color: rgb(33, 228, 111);
+    border: 1px solid rgb(211, 10, 167); 
+    
 }
+
 th{
     text-decoration-line: underline;
+}
+
+th, td{
+    margin: 0px 3px 0px 3px;
+    padding: 2px;
+}
+
+input, select, button{
+    padding: 2px;
+    margin: 10px;
+}
+
+.form{
+    margin: 20px;
+}
+
+form{
+    border: 1px solid rgb(211, 10, 167); 
 }

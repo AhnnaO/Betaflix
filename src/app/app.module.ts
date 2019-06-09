@@ -9,7 +9,6 @@ import { NavigationComponent } from './navigation/navigation.component';
 import { SearchComponent } from './search/search.component';
 import { CategoriesComponent } from './categories/categories.component';
 import { DetailsComponent } from './details/details.component';
-import { AboutComponent } from './about/about.component';
 import { HomeComponent } from './home/home.component';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { AdministrationComponent } from './administration/administration.component';
@@ -25,7 +24,6 @@ const appRoutes = [
   {path: 'cart', component: CartComponent},
   {path: 'details/:id', component: DetailsComponent},
   {path: 'movies/:id', component: MoviesComponent},
-  {path: 'about', component: AboutComponent},
   {path: 'home', component: HomeComponent},
   {path: '', redirectTo: '/home', pathMatch: 'full'},
   {path: '**', component: NotFoundComponent}
@@ -38,7 +36,6 @@ const appRoutes = [
     SearchComponent,
     CategoriesComponent,
     DetailsComponent,
-    AboutComponent,
     HomeComponent,
     NotFoundComponent,
     AdministrationComponent,

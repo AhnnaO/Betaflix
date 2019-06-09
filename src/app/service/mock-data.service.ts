@@ -85,7 +85,7 @@ export class MockDataService implements IDataService {
   }
 
   getSessionCartItems() {
-
+    return this.cart;
   }
 
   removeSelection() {

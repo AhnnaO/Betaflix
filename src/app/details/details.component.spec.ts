@@ -50,8 +50,8 @@ describe('DetailsComponent', () => {
 
   it('should add to cart', () => {
     // expect(component.addToCart).();
-    component.addToCart(2);
-    expect (component.details.length).toBe(2);
+    component.addToCart(1);
+    expect (component.details.length).toBe(1);
   });
 
 });
