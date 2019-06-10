@@ -1,9 +1,52 @@
 ul{
     list-style: none;
-    border: rgb(211, 10, 167) 1px solid;
+    padding: 0px;
+    width: 90%;
+    margin: auto;
 }
 
+.movieName{
+    font-size: 2.0em;
+}
 img{
     height: 250px;
     margin: 10%;
+}
+
+@media screen and (min-width: 768px){
+    .movieName{
+        font-size: 3.0em;
+    }
+
+    li{
+        font-size: 2.0em;
+    }
+
+    img{
+        height: 350px;
+        margin: 10%;
+    }
+
+    input, button {
+        font-size: 1.4em;
+    }
+}
+
+@media screen and (min-width: 922px){
+    .movieName{
+        font-size: 4.0em;
+    }
+
+    li{
+        font-size: 3.0em;
+    }
+
+    img{
+        height: 450px;
+        margin: 10%;
+    }
+
+    input, button {
+        font-size: 2.0em;
+    }
 }

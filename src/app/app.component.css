@@ -1,9 +1,8 @@
-h1{
+.title h1 {
     font-family: Orbitron;
     font-style: normal;
     font-weight: 500;
-    
-    font-size: 4.5rem;
+    font-size: 4.0rem;
     margin-top: 5%;
     margin-bottom: 5%;
     background:  
@@ -14,12 +13,13 @@ h1{
 }
 
 h2{
+    margin: auto;
     font-family: Geo;
     font-style: normal;
     font-weight: 500;
-    font-size: 2em;
+    font-size: 1.6em;
     color: rgb(33, 228, 111);
-    border: rgb(211, 10, 167) 1px solid;
+    border-bottom: rgb(211, 10, 167) 1px solid;
 }
 
 p{
@@ -29,11 +29,8 @@ p{
     font-size: 1.0em;
     color: rgb(33, 228, 111);
     margin: 0px auto;
-    padding: 5%;
-    border: rgb(211, 10, 167) 1px solid;    
+    padding: 5%;    
 }
-
-
 
 footer{
     border: rgb(211, 10, 167) 1px solid;
@@ -42,4 +39,42 @@ footer{
 .betaFlixImage{
     width: 150px;
     height: auto;
+}
+
+@media screen and (min-width: 768px){
+    .title h1{
+        font-size: 5.0rem;
+    }
+
+    h2{
+        font-size: 2.8rem;
+    }
+
+    p{
+        font-size: 2.0rem;
+    }
+
+    .betaFlixImage{
+        width: 250px;
+        height: auto;
+    }
+}
+
+@media screen and (min-width: 992px){
+    .title h1{
+        font-size: 6.0rem;
+    }
+
+    h2{
+        font-size: 3.8rem;
+    }
+
+    p{
+        font-size: 3.0rem;
+    }
+
+    .betaFlixImage{
+        width: 350px;
+        height: auto;
+    }
 }

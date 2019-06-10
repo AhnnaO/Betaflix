@@ -13,14 +13,11 @@ export class AdministrationComponent implements OnInit {
 
   ngOnInit() {
     this.showOrders();
-    // this.postedOrder = this.showOrders();
   }
+
   showOrders() {
     this.dataService.showOrder().subscribe((order) => {
       this.postedOrder = order;
-      console.log(this.postedOrder);
-
     });
-    console.log(this.postedOrder);
   }
 }

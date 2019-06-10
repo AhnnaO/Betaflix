@@ -6,7 +6,6 @@ import { FormsModule, ReactiveFormsModule} from '@angular/forms';
 
 import { AppComponent } from './app.component';
 import { NavigationComponent } from './navigation/navigation.component';
-import { SearchComponent } from './search/search.component';
 import { CategoriesComponent } from './categories/categories.component';
 import { DetailsComponent } from './details/details.component';
 import { HomeComponent } from './home/home.component';
@@ -33,7 +32,6 @@ const appRoutes = [
   declarations: [
     AppComponent,
     NavigationComponent,
-    SearchComponent,
     CategoriesComponent,
     DetailsComponent,
     HomeComponent,

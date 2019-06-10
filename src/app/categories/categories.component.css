@@ -1,19 +1,33 @@
 ul{
     list-style: none;
-    border: rgb(211, 10, 167) 1px solid;
+    /* border: rgb(211, 10, 167) 1px solid; */
     padding: 0px;
 }
 
-li{
-    font-family: Geo;
-    font-style: normal;
-    font-weight: 500;
-    font-size: 1.6em;
-    color: rgb(33, 228, 111);
-    text-decoration-line: underline;
+img{
+    height: 25px;
+    margin: 5%;
 }
 
-.displayIcon{
-    display: none;
+@media screen and (min-width: 768px){
+    li, p{
+        font-size: 3.0em;
+    }
+
+    img{
+        height: 40px;
+        margin: 5%;
+    }
+}
+
+@media screen and (min-width: 992px){
+    li, p{
+        font-size: 4.0em;
+    }
+
+    img{
+        height: 60px;
+        margin: 5%;
+    }
 }
 

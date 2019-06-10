@@ -57,7 +57,6 @@ export class DetailsComponent implements OnInit {
     }
 
     if (!foundMovie) {
-      // selectionTotal = newItems.product.price * newItems.amount;
       this.details.push({ product: newItems.product, amount: newItems.amount, selectionTotal: newItems.product.price * newItems.amount});
       this.dataService.addToCart(this.details);
     }

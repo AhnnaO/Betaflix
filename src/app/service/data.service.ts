@@ -5,6 +5,7 @@ import { IProduct } from '../interfaces/IProduct';
 import { IDataService } from '../interfaces/IDataService';
 import { ICategory } from '../interfaces/ICategory';
 import { ICartItem } from '../interfaces/ICartItem';
+// import { ICategoryIcon } from '../interfaces/ICategoryIcon';
 import { CartComponent } from '../cart/cart.component';
 import { IOrder } from '../interfaces/IOrder';
 

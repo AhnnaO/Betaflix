@@ -12,14 +12,18 @@ import { IOrder } from '../interfaces/IOrder';
 export class MockDataService implements IDataService {
   productCategory: ICategory[] = [
     {id: 5,
-    name: 'Action'},
+    name: 'Action',
+    logo: '../assets/images/Action logo.svg'},
 
     {id: 6,
-    name: 'Thriller'},
+    name: 'Thriller',
+    logo: '../assets/images/Thriller logo.svg'},
     {id: 7,
-      name: 'Comedy'},
+    name: 'Comedy',
+    logo: '../assets/images/Comedy logo.svg'},
     {id: 8,
-    name: 'Sci-fi'}];
+    name: 'Sci-fi',
+    logo: '../assets/images/Sci-Fi logo.svg'}];
 
   products: IProduct[] = [
     {id: 76,

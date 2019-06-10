@@ -1,10 +1,28 @@
-.container-fluid{
-    border: rgb(211, 10, 167) 1px solid;
+.row{
+    margin: 0px;
 }
+.col{
+    width: 80%;
+    padding: 5%;
+}
+
 .homeLogo{
     margin-top: 10%;
 }
 
-.shoppingCartLogo{ 
-    margin: 10%;
+.shoppingCartLogo{
+    margin-top:10%;
+    margin-right: 5px;
+}
+
+@media screen and (min-width: 768px){
+    img.homeLogo, img.shoppingCartLogo{
+        width: 50px;
+    }
+}
+
+@media screen and (min-width: 992px){
+    img.homeLogo, img.shoppingCartLogo{
+        width: 70px;
+    }
 }

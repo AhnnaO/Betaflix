@@ -1,11 +1,10 @@
+<br>
 <ul class="text-center">
-  <li *ngFor="let movie of filteredMovies" (click)="redirectToDetails(movie.id)"> 
-      <!-- {{ movie.productCategory.categoryId }} -->
-      <br>
-      {{ movie.id }} 
-      <br>
+  <li *ngFor="let movie of filteredMovies" (click)="redirectToDetails(movie.id)" class="pb-4"> 
       {{ movie.name }} 
       <br>
-      <img [src] = "movie.imageUrl" >
+      {{ movie.price }} kr
+      <br>
+      <img [src] = "movie.imageUrl" class="pb-4">
   </li>
 </ul>

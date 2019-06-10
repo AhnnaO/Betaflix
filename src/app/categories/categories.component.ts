@@ -5,6 +5,7 @@ import { ICategory } from '../interfaces/ICategory';
 
 import { HttpClient } from '@angular/common/http';
 import { IProduct } from '../interfaces/IProduct';
+// import { ICategoryIcon, ICategory, IProductCategory } from '../interfaces/ICategoryIcon';
 
 @Component({
   selector: 'app-categories',
@@ -12,51 +13,30 @@ import { IProduct } from '../interfaces/IProduct';
   styleUrls: ['./categories.component.css']
 })
 export class CategoriesComponent implements OnInit {
-  comedy = 'Comedy';
-  comedyLogo = '../assets/images/Comedy logo.svg';
-  action = 'Action';
-  actionLogo = '../assets/images/Action logo.svg';
-  thriller = 'Thriller';
-  thrillerLogo = '../assets/images/Thriller logo.svg';
-  sciFi = 'Sci-Fi';
-  sciFiLogo = '../assets/images/Sci-Fi logo.svg';
-  slogan = 'You think you’re retro, but do you even Betamax? ' +
-    'You think you’re hipster, but do you have a postal film delivery service? ' +
-    'Join the old school beta movement... ' +
-    'so uncool, it’s cool. ' +
-    'You know what we mean.';
 
   constructor(private dataService: DataService, private router: Router) { }
-  categories: ICategory[];
-  iconImage = '';
+  categories: ICategory[] = [];
 
   ngOnInit() {
     this.dataService.getCategory().subscribe((choice) => {
       this.categories = choice;
-
-        for (let i = 0; i < this.categories.length; i++) {
-          if (this.categories[i].id == 5) {
-            this.iconImage = this.actionLogo;
-          } else if (this.categories[i].id == 6) {
-            this.iconImage = this.comedyLogo;
-          } else if (this.categories[i].id == 7) {
-            this.iconImage = this.thrillerLogo;
-          } else if (this.categories[i].id == 8) {
-            this.iconImage = this.sciFiLogo;
-          }
+// tslint:disable-next-line: prefer-for-of
+      for (let i = 0; i < this.categories.length; i++) {
+        if (this.categories[i].id === 5) {
+          this.categories[i].logo = '../assets/images/Action logo.svg';
         }
-
+        if (this.categories[i].id === 6) {
+          this.categories[i].logo = '../assets/images/Thriller logo.svg';
+        }
+        if (this.categories[i].id === 7) {
+          this.categories[i].logo = '../assets/images/Comedy logo.svg';
+        }
+        if (this.categories[i].id === 8) {
+          this.categories[i].logo = '../assets/images/Sci-Fi logo.svg';
+        }
+      }
     });
-  
-
   }
-
-  actionIconVisibility: boolean = true;
-  comedyIconVisibility: boolean = true;
-  sciFiIconVisibility: boolean = true;
-  thrillerIconVisibility: boolean = true;
-  
-
 
   redirectToMovies(categoryId: number) {
     // this.router.navigateByUrl();

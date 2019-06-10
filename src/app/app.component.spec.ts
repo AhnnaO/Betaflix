@@ -3,7 +3,6 @@ import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { RouterTestingModule } from '@angular/router/testing';
 import { NavigationComponent } from './navigation/navigation.component';
-import { SearchComponent } from './search/search.component';
 import { CategoriesComponent } from './categories/categories.component';
 
 describe('AppComponent', () => {
@@ -13,7 +12,6 @@ describe('AppComponent', () => {
         AppComponent,
         HomeComponent,
         NavigationComponent,
-        SearchComponent,
         CategoriesComponent
       ],
       imports: [

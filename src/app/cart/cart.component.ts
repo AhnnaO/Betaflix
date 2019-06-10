@@ -66,8 +66,8 @@ export class CartComponent implements OnInit {
     const orders = {
       id: 0,
       companyId: 4,
-      created: moment().format('LLLL'),
-      createdBy: this.userInformation.value.userEmail,
+      created: moment().format('L'),
+      createdBy: this.userInformation.value.userName,
       paymentMethod: this.userInformation.value.paymentType,
       totalPrice: this.grandTotal(),
       status: 0,

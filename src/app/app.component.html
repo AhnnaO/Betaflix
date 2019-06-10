@@ -1,21 +1,18 @@
 <app-navigation></app-navigation>
 
-  <div class="text-center">
+  <div class="text-center title">
     <h1>
       {{ title }}
     </h1>
   </div>
 
   <div class="text-center">
-    <h2>
+    <h2 class="pb-4">
       {{ tagLine }}
     </h2>
   </div>
 
-
   <router-outlet></router-outlet>
-
-
 
   <footer class="text-center">
     <div>
@@ -23,8 +20,7 @@
         {{ slogan }}
       </p>
     </div>
-    
-    <div>
+    <div class="pb-4">
       <img [src]="betaFlixImage" class="betaFlixImage"/>
     </div>
   </footer>

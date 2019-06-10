@@ -1,10 +1,6 @@
-<ul class="text-center">
+<ul class="text-center categoryList">
     <li *ngFor="let category of categories" (click)="redirectToMovies(category.id)">
         {{ category.name }}
-        {{ iconImage }}
-        <!-- <img [class.displayIcon]="actionIconVisibility" [src]="actionLogo" alt="sword pixel">
-        <img [class.displayIcon]="thrillerIconVisibility" [src]="thrillerLogo" alt="scary face pixel">
-        <img [class.displayIcon]="comedyIconVisibility" [src]="comedyLogo" alt="happy face pixel">
-        <img [class.displayIcon]="sciFiIconVisibility" [src]="sciFiLogo" alt="spaceship pixel"> -->
+        <img [src]="category.logo" alt="pixel logos for categories">
     </li>
 </ul>

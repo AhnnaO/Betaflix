@@ -2,7 +2,6 @@ import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { RouterTestingModule } from '@angular/router/testing';
 import { HomeComponent } from './home.component';
 import { NavigationComponent } from '../navigation/navigation.component';
-import { SearchComponent } from '../search/search.component';
 import { CategoriesComponent } from '../categories/categories.component';
 import { HttpClientModule } from '@angular/common/http';
 
@@ -14,7 +13,6 @@ describe('HomeComponent', () => {
     TestBed.configureTestingModule({
       declarations: [ HomeComponent,
       NavigationComponent,
-      SearchComponent,
       CategoriesComponent
      ],
       imports: [ RouterTestingModule, HttpClientModule ]

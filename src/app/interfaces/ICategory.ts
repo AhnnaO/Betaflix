@@ -6,4 +6,5 @@ export interface IProductCategory {
 export interface ICategory {
     id: number;
     name: string;
+    logo: string;
 }
