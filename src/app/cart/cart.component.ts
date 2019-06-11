@@ -17,17 +17,17 @@ export class CartComponent implements OnInit {
   savedCart: ICartItem[] = [];
   totalPrice = 0;
   userInformation = this.fb.group({
-    userName: ['', Validators.required],
+    userName: ['', [Validators.required, Validators.minLength(2)]],
     userEmail: ['', Validators.required],
     paymentType: ['', Validators.required]
   });
+
   orderRows: IOrderRow[] = [];
 
   constructor(private route: ActivatedRoute, private dataService: DataService,
               private fb: FormBuilder) { }
 
   ngOnInit() {
-    // this.savedCart = JSON.parse(sessionStorage.getItem('cart'));
     this.savedCartItems();
     this.grandTotal();
   }
@@ -54,12 +54,14 @@ export class CartComponent implements OnInit {
     }
   }
   createOrderRow(){
+// tslint:disable-next-line: prefer-for-of
     for ( let i = 0; i < this.savedCart.length; i++) {
       this.orderRows.push(
         {ProductId: this.savedCart[i].product.id, Amount: this.savedCart[i].amount}
       );
     }
   }
+
   createOrder() {
     this.createOrderRow();
     console.log(this.userInformation.value);
@@ -74,14 +76,12 @@ export class CartComponent implements OnInit {
       orderRows: this.orderRows
     };
 
-    console.log(orders);
     this.dataService.createOrder(orders).subscribe(
       response => {console.log(response); },
       err => {console.log(err.message); },
       () => {console.log('completed'); }
     );
     sessionStorage.clear();
-    // this.savedCart = JSON.parse(sessionStorage.getItem('cart'));
     this.goToConfirmation();
   }
   goToConfirmation() {
