@@ -16,6 +16,7 @@ export class DetailsComponent implements OnInit {
   movie: IProduct = { id: 0, name: '', price: 0, description: '', imageUrl: '', year: 0, added: '', productCategory: [] };
   details: ICartItem[] = [];
 
+
   ngOnInit() {
 
     this.route.paramMap.subscribe(myParams => {
@@ -60,11 +61,11 @@ export class DetailsComponent implements OnInit {
       this.details.push({ product: newItems.product, amount: newItems.amount, selectionTotal: newItems.product.price * newItems.amount});
       this.dataService.addToCart(this.details);
     }
+
   }
 
   goToCart() {
   location.href = '/cart';
-  console.log('should go to cart');
   }
 
 }
