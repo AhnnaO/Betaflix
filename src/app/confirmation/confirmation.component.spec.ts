@@ -22,4 +22,9 @@ describe('ConfirmationComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
+  it('should create a sentence', () => {
+    expect (component.thankYou).toBe('Thank you for joining us in the old school Betaflix movement!');    
+    expect (component.shipment).toBe('Your order will be shipped shortly!');
+  });
 });

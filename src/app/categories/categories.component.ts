@@ -1,11 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, Router } from '@angular/router';
+import { Router } from '@angular/router';
 import { DataService } from '../service/data.service';
 import { ICategory } from '../interfaces/ICategory';
-
-import { HttpClient } from '@angular/common/http';
-import { IProduct } from '../interfaces/IProduct';
-// import { ICategoryIcon, ICategory, IProductCategory } from '../interfaces/ICategoryIcon';
 
 @Component({
   selector: 'app-categories',
@@ -39,8 +35,6 @@ export class CategoriesComponent implements OnInit {
   }
 
   redirectToMovies(categoryId: number) {
-    // this.router.navigateByUrl();
-
     location.href = '/movies/' + categoryId;
   }
 

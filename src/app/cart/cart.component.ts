@@ -22,6 +22,7 @@ export class CartComponent implements OnInit {
     paymentType: ['', Validators.required]
   });
 
+  orders: IOrder;
   orderRows: IOrderRow[] = [];
 
   constructor(private route: ActivatedRoute, private dataService: DataService,
@@ -53,7 +54,8 @@ export class CartComponent implements OnInit {
       this.grandTotal();
     }
   }
-  createOrderRow(){
+  createOrderRow() 
+  {
 // tslint:disable-next-line: prefer-for-of
     for ( let i = 0; i < this.savedCart.length; i++) {
       this.orderRows.push(
@@ -64,8 +66,7 @@ export class CartComponent implements OnInit {
 
   createOrder() {
     this.createOrderRow();
-    console.log(this.userInformation.value);
-    const orders = {
+    this.orders = {
       id: 0,
       companyId: 4,
       created: moment().format('L'),
@@ -76,15 +77,18 @@ export class CartComponent implements OnInit {
       orderRows: this.orderRows
     };
 
-    this.dataService.createOrder(orders).subscribe(
-      response => {console.log(response); },
+    this.dataService.createOrder(this.orders).subscribe(
+      response => {
+        this.orders = response;
+        sessionStorage.clear();
+        this.goToConfirmation();
+      },
       err => {console.log(err.message); },
       () => {console.log('completed'); }
     );
-    sessionStorage.clear();
-    this.goToConfirmation();
   }
+
   goToConfirmation() {
-  location.href = '/confirmation';
+    location.href = '/confirmation';
   }
 }

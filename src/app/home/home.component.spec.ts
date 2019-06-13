@@ -30,4 +30,8 @@ describe('HomeComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
+  it('should show an image', () => {
+    expect (component.actionLogo).toBe('../assets/images/Action logo.svg');
+  });
 });

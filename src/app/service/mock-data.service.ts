@@ -64,8 +64,8 @@ export class MockDataService implements IDataService {
       selectionTotal: 298}
     ];
 
-    order: IOrder[] = [
-      {id: 0,
+    orders: IOrder =
+      {id: 67890,
       companyId: 4,
       created: '2019-06-02T14:39:00',
       createdBy: 'Ahnna',
@@ -73,8 +73,7 @@ export class MockDataService implements IDataService {
       totalPrice: 298,
       status: 0,
       orderRows: [{ProductId: 76, Amount: 2}]
-      }
-    ];
+      };
 
   getData(): Observable<IProduct[]> {
       return of(this.products);
@@ -92,12 +91,16 @@ export class MockDataService implements IDataService {
     return this.cart;
   }
 
+  createOrder(): Observable<IOrder> {
+    return of(this.orders);
+  }
+
   removeSelection() {
 
   }
 
   showOrder(): Observable<IOrder[]> {
-    return of(this.order);
+    return of([this.orders]);
   }
 
   constructor() { }

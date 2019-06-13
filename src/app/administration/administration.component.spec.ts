@@ -1,8 +1,10 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-// import { HttpClient } from '@angular/common/http';
 import { AdministrationComponent } from './administration.component';
 import { HttpClientModule } from '@angular/common/http';
 import { RouterTestingModule } from '@angular/router/testing';
+import { MockDataService } from '../service/mock-data.service';
+import { DataService } from '../service/data.service';
+
 
 describe('AdministrationComponent', () => {
   let component: AdministrationComponent;
@@ -14,6 +16,16 @@ describe('AdministrationComponent', () => {
       imports: [
       HttpClientModule, RouterTestingModule ]
     })
+       // Override component's own provider to test with MockData.service
+   .overrideComponent(AdministrationComponent, {
+    set: {
+      providers: [
+        { provide: DataService, useClass: MockDataService }
+      ]
+    }
+  })
+
+
     .compileComponents();
   }));
 
@@ -25,5 +37,10 @@ describe('AdministrationComponent', () => {
 
   it('should create', () => {
     expect(component).toBeTruthy();
+  });
+
+  it('should create a table', () => {
+    component.showOrders();
+    expect (component.postedOrder.length).toEqual(1);
   });
 });
