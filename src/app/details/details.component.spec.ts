@@ -13,7 +13,7 @@ describe('DetailsComponent', () => {
   let component: DetailsComponent;
   let fixture: ComponentFixture<DetailsComponent>;
 
-  let stub = new ActivatedRouteStub({ id: 76 });
+  const stub = new ActivatedRouteStub({ id: 76 });
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({

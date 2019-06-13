@@ -24,6 +24,6 @@ describe('NavigationComponent', () => {
     expect(component).toBeTruthy();
   });
   it('should show an image', () => {
-    expect(component.homeLogo).toBe('../assets/images/Action logo.svg');
+    expect(component.homeLogo).toBe('../assets/images/Home logo.svg');
   });
 });
