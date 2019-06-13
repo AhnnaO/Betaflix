@@ -96,7 +96,7 @@ export class MockDataService implements IDataService {
   }
 
   removeSelection() {
-
+    return delete(this.cart);
   }
 
   showOrder(): Observable<IOrder[]> {

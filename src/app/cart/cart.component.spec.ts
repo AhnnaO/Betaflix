@@ -46,4 +46,9 @@ describe('CartComponent', () => {
     expect(mockFunction).toHaveBeenCalled();
   });
 
+  it('should delete item from cart', () => {
+    component.removeSelectionFromCart(76);
+    expect (component.savedCart.length).toBe(0);
+  });
+
 });
